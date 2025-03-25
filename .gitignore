@@ -1,0 +1,6 @@
+.venv
+.env
+.DS_Store
+docker-compose.debug.yml
+.pytest_cache
+__pycache__/
