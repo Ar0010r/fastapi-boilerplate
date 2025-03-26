@@ -1,11 +1,8 @@
 from fastapi import APIRouter, Depends
-from injector import Injector
-
 from app.business.action import auth
 from app.business.action import product as action
 from app.business.schema import Product, ProductBase, ProductProps
 from app.business.schema.user import User
-from app.business.service.product import ProductService
 from app.http.routes import Route
 
 router = APIRouter(route_class=Route)

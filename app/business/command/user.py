@@ -1,4 +1,3 @@
-from fastapi import Depends
 from injector import inject
 from app.business.command import CreateCommand
 from app.business.schema.user import UserRegister

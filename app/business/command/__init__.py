@@ -1,9 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Generic, Optional, Type, TypeVar
 from sqlalchemy.orm import DeclarativeMeta
-
 from pydantic import BaseModel
-
 from app.business.schema.user import User
 from app.business.service import BaseService, IService
 from app.core.database.postgres.read import IReader
@@ -14,8 +12,6 @@ TModel = TypeVar('TModel', bound=DeclarativeMeta)
 
 class CreateCommand(ABC, Generic[TRequest, TResponse, TModel]):
     return_model: Type[TResponse]
-    # service: IService[TModel]
-    # reader: IReader[TModel]
     
     def __init__(self, service: IService[TModel], reader: IReader[TModel]):
         self.service = service

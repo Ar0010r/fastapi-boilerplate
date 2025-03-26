@@ -20,7 +20,6 @@ class Credentials(BaseSettings):
     }
     
     prefix: str = "postgresql+asyncpg"
-    # prefix: str = "postgresql_asyncpg"
 
     def get_pg_url(self):
         return f"{self.prefix}://{self.pg_user}:{self.pg_password}@{self.pg_host}:{self.pg_port}/{self.pg_db}"

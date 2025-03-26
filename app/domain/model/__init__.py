@@ -18,10 +18,3 @@ class Product(Base):
     price = Column(Integer, default=0)
     status = Column(Integer, default=0)
     created_at = Column(DateTime, default=datetime.utcnow)
-    
-    
-
-
-
-    
-#created_at = Column(DateTime, default=datetime.now(timezone.utc))

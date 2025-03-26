@@ -14,10 +14,6 @@ from app.core.database.postgres import db_creds
 from fastapi_async_sqlalchemy import SQLAlchemyMiddleware, db
 from fastapi import FastAPI
 
-from app.core.exception import InvalidCredentials
-from app.core.hashing.bcrypt import Bcrypt
-from app.core.model import Credentials, PageRequest
-from app.domain.model.user import UserFilter
 from app.domain.repository.user import UserEraser, UserReader, UserScope
 
 SQLAlchemyMiddleware(app = FastAPI(), db_url = db_creds.get_pg_url())
@@ -28,7 +24,6 @@ reader = injector.get(UserReader)
 eraser = injector.get(UserEraser)
 scope = injector.get(UserScope)
 cmd =  injector.get(CreateUser)
-# cmd = CreateUser(service, reader)
 
 @pytest.mark.asyncio
 async def test_user_commands():

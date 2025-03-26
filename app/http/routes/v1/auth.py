@@ -1,6 +1,4 @@
 from fastapi import APIRouter, Depends
-from injector import Injector
-
 from app.business.action import auth as action
 from app.business.schema.user import User, UserBase, UserProps, UserRegister
 from app.core.model import Credentials

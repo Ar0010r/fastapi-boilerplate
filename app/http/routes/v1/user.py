@@ -1,5 +1,4 @@
 from fastapi import APIRouter, Depends
-
 from app.business.action import user as action
 from app.business.action import auth
 from app.business.schema.user import User, UserProps, UserRegister, UsersRequest
@@ -8,9 +7,9 @@ from app.http.routes import Route
 
 router = APIRouter(route_class=Route)
 
-# @router.post("/user", response_model=User)
-# async def create(model: UserRegister, user: User = Depends(auth.get_user)) -> User:
-#     return await action.create(model)
+@router.post("/user", response_model=User)
+async def create(model: UserRegister) -> User:
+    return await action.create(model)
 
 @router.put("/user/{id}", response_model=User)
 async def update(id: int, model: UserProps, user: User = Depends(auth.get_user)) -> User:

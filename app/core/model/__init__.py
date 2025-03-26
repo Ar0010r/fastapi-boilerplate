@@ -20,11 +20,6 @@ class PageRequest(BaseModel):
 class ChunkRequest(BaseModel):
     skip : int = 0
     take : int = 10
-
-# class DataRequest(BaseModel):
-#     filters : list[Filter] = []
-#     sorts : list[OrderBy] = []
-#     pagination : PageRequest = None
     
 class DataRequest(BaseModel, Generic[T]):
     filters : T = T

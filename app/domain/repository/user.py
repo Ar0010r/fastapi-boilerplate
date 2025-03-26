@@ -5,7 +5,6 @@ from app.core.database.postgres.delete import DataEraser
 from app.core.database.postgres.read import DataReader, DataScope
 from app.core.database.postgres.write import DataWriter
 from app.domain.model.user import User, UserFilter
-from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
     
 class UserReader(DataReader[User]):
