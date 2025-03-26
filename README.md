@@ -1,6 +1,6 @@
 # Fastapi boilerplate
 
-Example of dockerized fastapi app for applying general restapi cases.
+Example of dockerized fastapi app for applying general restapi cases
 
 ## concept
 1. Minimal functionality.
